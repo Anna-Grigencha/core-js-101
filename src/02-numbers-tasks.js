@@ -20,9 +20,8 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
- // throw new Error('Not implemented');
- let rectangleArea = width * height;
- return rectangleArea;
+  const rectangleArea = width * height;
+  return rectangleArea;
 }
 
 
@@ -37,8 +36,9 @@ function getRectangleArea(width, height) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCircleCircumference(/* radius */) {
-  throw new Error('Not implemented');
+function getCircleCircumference(radius) {
+  const result = 2 * Math.PI * radius;
+  return result;
 }
 
 /**
@@ -53,8 +53,10 @@ function getCircleCircumference(/* radius */) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(value1, value2) {
+  // throw new Error('Not implemented');
+  const result = value1 / 2 + value2 / 2;
+  return result;
 }
 
 /**
@@ -88,8 +90,9 @@ function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot(a, b) {
+  const result = -b / a;
+  return result;
 }
 
 
@@ -129,6 +132,10 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  */
 function getLastDigit(/* value */) {
   throw new Error('Not implemented');
+  /* const str = String(value);
+  const result = Number(str[str[length] - 1]);
+
+  return result; */
 }
 
 
@@ -143,8 +150,9 @@ function getLastDigit(/* value */) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString(value) {
+  const result = Number(value);
+  return result;
 }
 
 /**
@@ -160,8 +168,9 @@ function parseNumberFromString(/* value */) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getParallelepipedDiagonal(a, b, c) {
+  const result = Math.sqrt(a ** 2 + b ** 2 + c ** 2);
+  return result;
 }
 
 
@@ -182,8 +191,9 @@ function getParallelepipedDiagonal(/* a, b, c */) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+  const result = (Math.round(num / 10 ** pow)) * 10 ** pow;
+  return result;
 }
 
 /**
@@ -205,7 +215,14 @@ function roundToPowerOfTen(/* num, pow */) {
  */
 function isPrime(/* n */) {
   throw new Error('Not implemented');
+  /* for (let i = 2; i <= n / 2; i + 1) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true; */
 }
+
 
 /**
  * Tries to convert value to number and returns it if conversion was successful;
