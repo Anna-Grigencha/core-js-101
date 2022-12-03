@@ -145,6 +145,7 @@ function removeFirstOccurrences(/* str, value */) {
 /**
  * Remove the first and last angle brackets from tag string
  *
+
  * @param {string} str
  * @return {string}
  *
