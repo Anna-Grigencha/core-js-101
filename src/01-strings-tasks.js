@@ -199,7 +199,8 @@ function extractEmails(/* str */) {
  * @param {number} width
  * @param {number} height
  * @return {string}
- *
+
+*
  * @example
  *
  *            '┌────┐\n'+
