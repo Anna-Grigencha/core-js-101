@@ -260,8 +260,7 @@ function getMovingSum(/* arr */) {
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
-  // throw new Error('Not implemented');
-  const result = arr.filter((index) => index % 2 === 0 && index !== 0);
+  const result = arr.filter((_, index) => index % 2);
   return result;
 }
 

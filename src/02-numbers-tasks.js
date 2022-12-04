@@ -54,7 +54,6 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  // throw new Error('Not implemented');
   const result = value1 / 2 + value2 / 2;
   return result;
 }
@@ -74,8 +73,9 @@ function getAverage(value1, value2) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+  const result = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+  return result;
 }
 
 /**
@@ -130,12 +130,9 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
-  /* const str = String(value);
-  const result = Number(str[str[length] - 1]);
-
-  return result; */
+function getLastDigit(value) {
+  const result = value % 10;
+  return result;
 }
 
 
