@@ -246,6 +246,10 @@ function toArrayOfSquares(arr) {
  */
 function getMovingSum(/* arr */) {
   throw new Error('Not implemented');
+  // const result = arr.map.reduce((sum, item) => sum + item);
+  // map(item => item.length);
+  // arr.reduce((sum, current) => sum + current);
+  // return result;
 }
 
 /**
@@ -585,8 +589,23 @@ function getElementByIndexes(/* arr, indexes */) {
  *   [ 1, 2, 3, 4, 5, 6, 7, 8 ]   =>  [ 5, 6, 7, 8, 1, 2, 3, 4 ]
  *
  */
-function swapHeadAndTail(/* arr */) {
-  throw new Error('Not implemented');
+function swapHeadAndTail(arr) {
+  let result = [];
+  const halfLength = Math.floor(arr.length / 2);
+  if (arr.length % 2 === 0) {
+    const firstPart = arr.slice(halfLength, arr.length);
+    console.log(firstPart);
+    const secondPart = arr.slice(0, halfLength);
+    console.log(secondPart);
+    result = result.concat(firstPart, secondPart);
+    console.log(result);
+  } else if (arr.length % 2 !== 0) {
+    const firstPart = arr.slice(halfLength + 1, arr.length);
+    const secondPart = arr.slice(0, halfLength);
+    result = result.concat(firstPart, arr[halfLength], secondPart);
+  }
+
+  return result;
 }
 
 
