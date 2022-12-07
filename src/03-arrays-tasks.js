@@ -594,11 +594,8 @@ function swapHeadAndTail(arr) {
   const halfLength = Math.floor(arr.length / 2);
   if (arr.length % 2 === 0) {
     const firstPart = arr.slice(halfLength, arr.length);
-    console.log(firstPart);
     const secondPart = arr.slice(0, halfLength);
-    console.log(secondPart);
     result = result.concat(firstPart, secondPart);
-    console.log(result);
   } else if (arr.length % 2 !== 0) {
     const firstPart = arr.slice(halfLength + 1, arr.length);
     const secondPart = arr.slice(0, halfLength);
