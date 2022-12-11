@@ -71,6 +71,11 @@ function getFactorial(n) {
  */
 function getSumBetweenNumbers(/* n1, n2 */) {
   throw new Error('Not implemented');
+/*  let sum = 0;
+  for (let i = n1; i <= n2; i + 1) {
+    sum += i;
+  }
+  return sum; */
 }
 
 
