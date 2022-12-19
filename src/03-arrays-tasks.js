@@ -36,8 +36,11 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  let arr = new Array(len);
+  arr = arr.fill(0);
+  const result = arr.map((item, index) => item + index * 2 + 1);
+  return result;
 }
 
 
@@ -246,10 +249,12 @@ function toArrayOfSquares(arr) {
  */
 function getMovingSum(/* arr */) {
   throw new Error('Not implemented');
-  // const result = arr.map.reduce((sum, item) => sum + item);
-  // map(item => item.length);
-  // arr.reduce((sum, current) => sum + current);
-  // return result;
+  // взять предыдущее из нового массива и предыдущее из старого
+  // let newArr = Array(arr.length);
+  // newArr = newArr.fill(0);
+  // newArr = newArr.map((item, index) => item[index - 1] + arr[index]);
+  // const result = arr.map((item, index) => item + index * 2 + 1);
+  // return newArr;
 }
 
 /**
@@ -339,10 +344,20 @@ function getPositivesCount(arr) {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
-  throw new Error('Not implemented');
-  /* arr.sort();
-  return arr; */
+function sortDigitNamesByNumericOrder(arr) {
+  const dataNumber = {
+    zero: 0,
+    one: 1,
+    two: 2,
+    three: 3,
+    four: 4,
+    five: 5,
+    six: 6,
+    seven: 7,
+    eight: 8,
+    nine: 9,
+  };
+  return arr.sort((a, b) => dataNumber[a] - dataNumber[b]);
 }
 
 /**
@@ -411,7 +426,6 @@ function findAllOccurrences(arr, item) {
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(arr) {
-  // throw new Error('Not implemented');
   const result = arr.join();
   return result;
 }
@@ -482,8 +496,11 @@ function getIdentityMatrix(/* n */) {
  *     0, 100 => [ 0, 1, 2, ..., 100 ]
  *     3, 3   => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  // throw new Error('Not implemented');
+  let result = new Array(end - start + 1);
+  result = result.fill(start).map((item, index) => item + index);
+  return result;
 }
 
 /**
