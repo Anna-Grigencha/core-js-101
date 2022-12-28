@@ -69,13 +69,11 @@ function getFactorial(n) {
  *   5,10  =>  45 ( = 5+6+7+8+9+10 )
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
-function getSumBetweenNumbers(/* n1, n2 */) {
-  throw new Error('Not implemented');
-/*  let sum = 0;
-  for (let i = n1; i <= n2; i + 1) {
-    sum += i;
-  }
-  return sum; */
+function getSumBetweenNumbers(n1, n2) {
+  let arr = new Array(n2 - n1 + 1);
+  arr = arr.fill(n1).map((item, index) => item + index);
+  const result = arr.reduce((sum, current) => sum + current, 0);
+  return result;
 }
 
 
@@ -165,8 +163,12 @@ function doRectanglesOverlap(/* rect1, rect2 */) {
  *   { center: { x:0, y:0 }, radius:10 },  { x:10, y:10 }   => false
  *
  */
-function isInsideCircle(/* circle, point */) {
-  throw new Error('Not implemented');
+function isInsideCircle(circle, point) {
+  const distance = Math.sqrt((circle.center.x - point.x) ** 2 + (circle.center.y - point.y) ** 2);
+  if (distance < circle.radius) {
+    return true;
+  }
+  return false;
 }
 
 
@@ -309,7 +311,6 @@ function isCreditCardNumber(/* ccn */) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-  // throw new Error('Not implemented');
   const str = num.toString();
   const arr = str.split('');
   const sum1 = arr.reduce((sum, current) => sum + (+current), 0);

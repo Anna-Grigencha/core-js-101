@@ -204,7 +204,7 @@ function extractEmails(str) {
  * @example
  *
  *            '┌────┐\n'+
- *  (6,4) =>  '│    │\n'+
+ *  (6,4) =>  '│    │\n'+  ┌────
  *            '│    │\n'+
  *            '└────┘\n'
  *
@@ -239,6 +239,10 @@ function getRectangleString(/* width, height */) {
  */
 function encodeToRot13(/* str */) {
   throw new Error('Not implemented');
+  /* const entry = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const exit = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+  const result = '';
+  const arr = str.split(); */
 }
 
 /**
