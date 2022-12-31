@@ -212,8 +212,10 @@ function getTail(arr, n) {
  *    +'20,21,22,23,24\n'
  *    +'30,31,32,33,34'
  */
-function toCsvText(/* arr */) {
-  throw new Error('Not implemented');
+function toCsvText(arr) {
+  const newArr = arr.map((item) => item.join(','));
+  const result = newArr.join('\n');
+  return result;
 }
 
 /**
@@ -247,14 +249,14 @@ function toArrayOfSquares(arr) {
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0]
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
-function getMovingSum(/* arr */) {
-  throw new Error('Not implemented');
-  // взять предыдущее из нового массива и предыдущее из старого
-  // let newArr = Array(arr.length);
-  // newArr = newArr.fill(0);
-  // newArr = newArr.map((item, index) => item[index - 1] + arr[index]);
-  // const result = arr.map((item, index) => item + index * 2 + 1);
-  // return newArr;
+function getMovingSum(arr) {
+  const result = [];
+  let sum = 0;
+  for (let i = 0; i < arr.length; i += 1) {
+    sum += arr[i];
+    result.push(sum);
+  }
+  return result;
 }
 
 /**
@@ -289,8 +291,12 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-  // throw new Error('Not implemented');
-  const result = arr.map((item, index) => item.toString().repeat(index + 1).split('').join());
+  const result = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    for (let j = 0; j < i + 1; j += 1) {
+      result.push(arr[i]);
+    }
+  }
   return result;
 }
 
@@ -515,8 +521,14 @@ function getIntervalArray(start, end) {
  *   [ 'a', 'a', 'a', 'a' ]  => [ 'a' ]
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
-function distinct(/* arr */) {
-  throw new Error('Not implemented');
+function distinct(arr) {
+  const result = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    if (result.includes(arr[i]) === false) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
 }
 
 /**
