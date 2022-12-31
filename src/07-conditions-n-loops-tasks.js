@@ -186,8 +186,17 @@ function isInsideCircle(circle, point) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  const arr = str.split('');
+  if (arr.indexOf(arr[0], 1) === (-1)) {
+    return arr[0];
+  }
+  for (let i = 1; i < arr.length; i += 1) {
+    if (arr.indexOf(arr[i], i + 1) === (-1) && arr.lastIndexOf(arr[i], i - 1) === (-1)) {
+      return arr[i];
+    }
+  }
+  return null;
 }
 
 
@@ -347,8 +356,44 @@ function getDigitalRoot(num) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true
  */
-function isBracketsBalanced(/* str */) {
-  throw new Error('Not implemented');
+function isBracketsBalanced(str) {
+  // throw new Error('Not implemented');
+  const openBrackets = ['(', '{', '[', '|', '<'];
+  const bracketsPair = {
+    ')': '(',
+    '}': '{',
+    ']': '[',
+    '|': '|',
+    '>': '<',
+  };
+
+  // function inBracketsOk(str) {
+  const stack = [];
+  for (let i = 0; i < str.length; i += 1) {
+    const currentSymbol = str[i];
+    if (openBrackets.includes(currentSymbol)) {
+      // проверяем содержит ли множество открывающихся скобок текущий символ (открываее или закр
+      if (bracketsPair[currentSymbol] === currentSymbol) {
+        if (stack.length !== 0 && stack[stack.length - 1] === currentSymbol) {
+          stack.pop();
+        } else {
+          stack.push(currentSymbol);
+        }
+      } else {
+        stack.push(currentSymbol);
+      }
+    } else {
+      if (stack.length === 0) {
+        return false;
+      }
+      if (bracketsPair[currentSymbol] === stack[stack.length - 1]) {
+        stack.pop();
+      } else {
+        return false;
+      }
+    }
+  }
+  return stack.length === 0;
 }
 
 
