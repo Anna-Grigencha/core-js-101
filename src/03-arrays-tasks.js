@@ -252,10 +252,11 @@ function toArrayOfSquares(arr) {
 function getMovingSum(arr) {
   const result = [];
   let sum = 0;
-  for (let i = 0; i < arr.length; i += 1) {
-    sum += arr[i];
+  arr.map((item) => {
+    sum += item;
     result.push(sum);
-  }
+    return sum;
+  });
   return result;
 }
 
@@ -465,8 +466,8 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  *    ]
  */
-function sortCitiesArray(/* arr */) {
-  throw new Error('Not implemented');
+function sortCitiesArray(arr) {
+  return arr.sort((a, b) => a.country.localeCompare(b.country) || a.city.localeCompare(b.city));
 }
 
 /**
@@ -597,8 +598,13 @@ function selectMany(arr, childrenSelector) {
  *   ['one','two','three'], [2]       => 'three'  (arr[2])
  *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
  */
-function getElementByIndexes(/* arr, indexes */) {
-  throw new Error('Not implemented');
+function getElementByIndexes(arr, indexes) {
+  const index = indexes.shift();
+  const result = arr[index];
+  if (indexes.length) {
+    return getElementByIndexes(result, indexes);
+  }
+  return result;
 }
 
 
